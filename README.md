@@ -1,40 +1,40 @@
 # Pong Game
 
-A simple two-player-style Pong game built with C++ and [raylib](https://www.raylib.com/). You control the right paddle, while the computer controls the left paddle. Score by getting the ball past the other paddle.
+A classic Pong game made with C++ and [raylib 4.5.0](https://github.com/raysan5/raylib/releases/tag/4.5.0). Control the right paddle and play against a computer-controlled opponent.
 
 ## Controls
 
-- **Up Arrow**: move your paddle up.
-- **Down Arrow**: move your paddle down.
-- **Close the game window**: quit.
+- **Up Arrow**: move the player paddle up.
+- **Down Arrow**: move the player paddle down.
+- **Close the window**: quit the game.
 
 ## Requirements
 
-- A C++ compiler with C++14 support.
-- [raylib 4.5.0](https://github.com/raysan5/raylib/releases/tag/4.5.0), including its headers and library.
-- GNU Make. On Windows, the included Makefile is configured for raylib's **w64devkit** toolchain.
+- Windows
+- [raylib 4.5.0](https://github.com/raysan5/raylib/releases/tag/4.5.0)
+- [w64devkit](https://github.com/skeeto/w64devkit/releases) with GNU Make and a C++ compiler
 
-## Build and run on Windows
+The build command below assumes w64devkit is installed at `C:/raylib/w64devkit` and raylib at `C:/raylib/raylib`. Change those paths if your setup differs.
 
-The included VS Code build tasks expect w64devkit at `C:/raylib/w64devkit/bin` and raylib at `C:/raylib/raylib`. If raylib is installed elsewhere, change `RAYLIB_PATH` to its location.
+## Build
 
-From the project directory, build with:
+Run this command from the project directory in PowerShell:
 
 ```powershell
 C:/raylib/w64devkit/bin/make.exe RAYLIB_PATH=C:/raylib/raylib PROJECT_NAME=main OBJS=main.cpp
 ```
 
-Run the game with:
+This creates `main.exe` in the project directory.
+
+## Run
 
 ```powershell
 ./main.exe
 ```
 
-If you are using the included VS Code setup, you can also choose **Terminal > Run Build Task** and select a build task.
+If Windows reports that a compiler DLL is missing, run the game from a w64devkit terminal or add `C:/raylib/w64devkit/bin` to your `PATH`.
 
 ## Project files
 
 - `main.cpp` - game source code.
-- `Makefile` - build configuration for raylib.
-
-The generated executable and compiler DLLs are build/runtime files and are excluded from Git. Build the game locally using the instructions above.
+- `Makefile` - build configuration.

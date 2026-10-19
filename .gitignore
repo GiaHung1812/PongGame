@@ -1,0 +1,14 @@
+# Compiled output
+*.exe
+*.dll
+*.dsym
+main
+build/
+obj/
+
+# Visual Studio cache
+.vs/
+
+# Local editor configuration can contain machine-specific paths
+.vscode/
+*.code-workspace
